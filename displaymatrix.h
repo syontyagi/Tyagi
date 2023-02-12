@@ -1,2 +1,2 @@
 #include <stdio.h>
-int displayallbox(int num);
+int displayallbox(int arr[], int len);
