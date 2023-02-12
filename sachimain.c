@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "input.h"
+#include "gameover.h"
 
 
 
@@ -25,6 +26,9 @@ int main(int argc, char *argv[])
 			i--;
 		}
 		else {
+			if(gameover(arr, len) == 1) {
+				return 1;
+			}
 			if(turn == 1) {
 				turn = 2;
 			}
@@ -33,4 +37,5 @@ int main(int argc, char *argv[])
 			}
 		}
 	}
+	return 0;
 }
