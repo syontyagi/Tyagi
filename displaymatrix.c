@@ -139,18 +139,18 @@ int displaybox(int pos, int num)
 			displaybox9(num);
 			break;
 		default:
-			printf("invalid position\n");
+			printf("THINK outside the box, PLAY inside it\n");
 	}
 	return 0;
 }
 
-int displayallbox(int num) 
+int displayallbox(int arr[], int len) 
 {
         int pos;
 	printf("\033[2J");
 	printf("\033[H");
-        for(pos=1; pos<10; pos++) {
-                displaybox(pos, num);
+        for(pos=0; pos<len; pos++) {
+                displaybox(pos+1, arr[pos]);
         }
         return 0;
 }
