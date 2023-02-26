@@ -150,7 +150,15 @@ int displayallbox(int arr[], int len)
 	printf("\033[2J");
 	printf("\033[H");
         for(pos=0; pos<len; pos++) {
-                displaybox(pos+1, arr[pos]);
+		if(arr[pos] == 0) {
+			displaybox(pos+1, 'X');
+		}
+		else if (arr[pos] == 1) {
+			displaybox(pos+1, 'O');
+		}
+		else {
+                	displaybox(pos+1, pos+49);
+		}
         }
         return 0;
 }

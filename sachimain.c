@@ -3,6 +3,7 @@
 #include <string.h>
 #include "input.h"
 #include "gameover.h"
+#include "displaymatrix.h"
 
 
 
@@ -12,16 +13,19 @@ int main(int argc, char *argv[])
 	int arr[9] = {2,2,2,2,2,2,2,2,2};
 	len = 9;
 	turn = 1;
-	printf("matrix is: ");
-	for(i=0;i<9;i++) {
-		printf("%d ", arr[i]);
-	}
+	//printf("matrix is: ");
+	//for(i=0;i<9;i++) {
+	//	printf("%d ", arr[i]);
+	//}
+	displayallbox(arr, len);
 	for(i=0;i<9;i++) {
 		printf("\n");
 		printf("input your move: ");
 		scanf("%d", &loc);
 		printf("you entered: %d\n",loc);
 		retval = inputmove (arr, len, loc, turn);
+		//matrix is
+		displayallbox(arr, len);
 		if (retval == -1) {
 			i--;
 		}
